@@ -2,7 +2,7 @@
 //  Homework8_CRUDNotebookApp.swift
 //  Homework8_CRUDNotebook
 //
-//  Created by Berkay Emre Aslan on 15.09.2025.
+//  Created by Berkay Emre Aslan on 19.09.2025.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct Homework8_CRUDNotebookApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NotesListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
