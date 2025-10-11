@@ -13,14 +13,12 @@ final class Homework10_APIExplorerUITests: XCTestCase {
         continueAfterFailure = false
     }
 
-    // Basit duman testi: Uygulama açılıyor mu? Çökmeden foreground'a geliyor mu?
     func testLaunchAndStayAlive() {
         let app = XCUIApplication()
         app.launch()
         XCTAssertEqual(app.state, .runningForeground)
     }
 
-    // Liste varsa pull-to-refresh dener; yoksa testi SKIP eder (başarısız saymaz).
     func testPullToRefreshIfTableExists() throws {
         let app = XCUIApplication()
         app.launch()
@@ -30,10 +28,8 @@ final class Homework10_APIExplorerUITests: XCTestCase {
             throw XCTSkip("Liste görünmedi; bu akış ekran yapısına bağlıdır.")
         }
 
-        // Refresh hareketi (varsa)
         table.swipeDown()
 
-        // Basit doğrulama
         XCTAssertTrue(table.exists)
     }
 }

@@ -29,20 +29,42 @@
 		FAB0B94A2E8442A4008B6AD6 /* Homework10_APIExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Homework10_APIExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FA4122362E86E4C400301434 /* Exceptions for "Homework10_APIExplorer" folder in "Homework10_APIExplorer" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Tests/Homework10_APIExplorerTests/Homework10_APIExplorerTests.swift,
+				Tests/Homework10_APIExplorerUITests/Homework10_APIExplorerUITests.swift,
+				Tests/Homework10_APIExplorerUITests/Homework10_APIExplorerUITestsLaunchTests.swift,
+			);
+			target = FAB0B92F2E8442A2008B6AD6 /* Homework10_APIExplorer */;
+		};
+		FA4122372E86E4C400301434 /* Exceptions for "Homework10_APIExplorer" folder in "Homework10_APIExplorerTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Tests/Homework10_APIExplorerTests/Homework10_APIExplorerTests.swift,
+			);
+			target = FAB0B93F2E8442A4008B6AD6 /* Homework10_APIExplorerTests */;
+		};
+		FA41223D2E86E4C800301434 /* Exceptions for "Homework10_APIExplorer" folder in "Homework10_APIExplorerUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Tests/Homework10_APIExplorerUITests/Homework10_APIExplorerUITests.swift,
+				Tests/Homework10_APIExplorerUITests/Homework10_APIExplorerUITestsLaunchTests.swift,
+			);
+			target = FAB0B9492E8442A4008B6AD6 /* Homework10_APIExplorerUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FAB0B9322E8442A2008B6AD6 /* Homework10_APIExplorer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FA4122362E86E4C400301434 /* Exceptions for "Homework10_APIExplorer" folder in "Homework10_APIExplorer" target */,
+				FA4122372E86E4C400301434 /* Exceptions for "Homework10_APIExplorer" folder in "Homework10_APIExplorerTests" target */,
+				FA41223D2E86E4C800301434 /* Exceptions for "Homework10_APIExplorer" folder in "Homework10_APIExplorerUITests" target */,
+			);
 			path = Homework10_APIExplorer;
-			sourceTree = "<group>";
-		};
-		FAB0B9432E8442A4008B6AD6 /* Homework10_APIExplorerTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Homework10_APIExplorerTests;
-			sourceTree = "<group>";
-		};
-		FAB0B94D2E8442A4008B6AD6 /* Homework10_APIExplorerUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Homework10_APIExplorerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -76,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				FAB0B9322E8442A2008B6AD6 /* Homework10_APIExplorer */,
-				FAB0B9432E8442A4008B6AD6 /* Homework10_APIExplorerTests */,
-				FAB0B94D2E8442A4008B6AD6 /* Homework10_APIExplorerUITests */,
 				FAB0B9312E8442A2008B6AD6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +150,6 @@
 			dependencies = (
 				FAB0B9422E8442A4008B6AD6 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				FAB0B9432E8442A4008B6AD6 /* Homework10_APIExplorerTests */,
-			);
 			name = Homework10_APIExplorerTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +169,6 @@
 			);
 			dependencies = (
 				FAB0B94C2E8442A4008B6AD6 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				FAB0B94D2E8442A4008B6AD6 /* Homework10_APIExplorerUITests */,
 			);
 			name = Homework10_APIExplorerUITests;
 			packageProductDependencies = (

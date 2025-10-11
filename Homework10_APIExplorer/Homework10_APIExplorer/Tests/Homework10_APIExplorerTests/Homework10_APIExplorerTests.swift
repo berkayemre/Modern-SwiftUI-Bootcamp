@@ -10,7 +10,6 @@ import XCTest
 
 final class NetworkServiceTests: XCTestCase {
 
-    // 200 OK + geçerli JSON → başarıyla decode edilmeli
     func testDecodeCharacters_Succeeds() async throws {
         let json = """
         {"info":{"count":1,"pages":1,"next":null,"prev":null},
@@ -28,7 +27,6 @@ final class NetworkServiceTests: XCTestCase {
         XCTAssertEqual(page.results.first?.name, "Rick")
     }
 
-    // 404 → statusCode(404) hatası beklenmeli
     func testDecodeCharacters_404() async {
         let cfg = URLSessionConfiguration.ephemeral
         cfg.protocolClasses = [MockURLProtocol.self]
@@ -48,7 +46,6 @@ final class NetworkServiceTests: XCTestCase {
         }
     }
 
-    // 200 OK + bozuk JSON → decoding hatası beklenmeli
     func testDecodeCharacters_BadJSON() async {
         let bad = #"{"info":{},"results":[{"id":"not-an-int"}]}"#
         let cfg = URLSessionConfiguration.ephemeral
@@ -63,7 +60,6 @@ final class NetworkServiceTests: XCTestCase {
             let _: PagedResponse<Character> = try await service.get(URL(string:"https://x")!)
             XCTFail("Decoding hatası bekleniyordu")
         } catch NetworkError.decoding {
-            // başarı
         } catch {
             XCTFail("Yanlış hata türü: \(error)")
         }
