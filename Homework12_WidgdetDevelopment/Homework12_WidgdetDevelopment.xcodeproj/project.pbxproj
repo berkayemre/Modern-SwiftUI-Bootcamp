@@ -6,14 +6,153 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FAE0D24A2E9FF0D8004C7799 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE0D2492E9FF0D8004C7799 /* WidgetKit.framework */; };
+		FAE0D24C2E9FF0D8004C7799 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE0D24B2E9FF0D8004C7799 /* SwiftUI.framework */; };
+		FAE0D2572E9FF0DA004C7799 /* TaskWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FAE0D2472E9FF0D8004C7799 /* TaskWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FAE0D2702E9FF36D004C7799 /* ToggleTaskIntent.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = FAE0D2672E9FF36D004C7799 /* ToggleTaskIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAE0D2552E9FF0DA004C7799 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAE0D2282E9FD9C3004C7799 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAE0D2462E9FF0D8004C7799;
+			remoteInfo = TaskWidgetExtension;
+		};
+		FAE0D26E2E9FF36D004C7799 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAE0D2282E9FD9C3004C7799 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAE0D2662E9FF36D004C7799;
+			remoteInfo = ToggleTaskIntent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FAE0D25C2E9FF0DA004C7799 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FAE0D2572E9FF0DA004C7799 /* TaskWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE0D2752E9FF36D004C7799 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				FAE0D2702E9FF36D004C7799 /* ToggleTaskIntent.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FAE0D2302E9FD9C3004C7799 /* Homework12_WidgdetDevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework12_WidgdetDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE0D2472E9FF0D8004C7799 /* TaskWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TaskWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE0D2492E9FF0D8004C7799 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FAE0D24B2E9FF0D8004C7799 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FAE0D2672E9FF36D004C7799 /* ToggleTaskIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ToggleTaskIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE0D2852E9FFDD2004C7799 /* TaskWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FAE0D2582E9FF0DA004C7799 /* Exceptions for "TaskWidget" folder in "TaskWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FAE0D2462E9FF0D8004C7799 /* TaskWidgetExtension */;
+		};
+		FAE0D2712E9FF36D004C7799 /* Exceptions for "ToggleTaskIntent" folder in "ToggleTaskIntent" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FAE0D2662E9FF36D004C7799 /* ToggleTaskIntent */;
+		};
+		FAE0D2782E9FF57B004C7799 /* Exceptions for "Homework12_WidgdetDevelopment" folder in "TaskWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SharedModelContainer.swift,
+				TaskItem.swift,
+			);
+			target = FAE0D2462E9FF0D8004C7799 /* TaskWidgetExtension */;
+		};
+		FAE0D2792E9FF57B004C7799 /* Exceptions for "Homework12_WidgdetDevelopment" folder in "ToggleTaskIntent" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SharedModelContainer.swift,
+				TaskItem.swift,
+			);
+			target = FAE0D2662E9FF36D004C7799 /* ToggleTaskIntent */;
+		};
+		FAE0D27E2E9FF595004C7799 /* Exceptions for "ToggleTaskIntent" folder in "Homework12_WidgdetDevelopment" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ToggleTaskIntent.swift,
+			);
+			target = FAE0D22F2E9FD9C3004C7799 /* Homework12_WidgdetDevelopment */;
+		};
+		FAE0D27F2E9FF595004C7799 /* Exceptions for "ToggleTaskIntent" folder in "TaskWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ToggleTaskIntent.swift,
+			);
+			target = FAE0D2462E9FF0D8004C7799 /* TaskWidgetExtension */;
+		};
+		FAE0D2832E9FFD88004C7799 /* Exceptions for "TaskWidget" folder in "Homework12_WidgdetDevelopment" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TaskWidget.swift,
+			);
+			target = FAE0D22F2E9FD9C3004C7799 /* Homework12_WidgdetDevelopment */;
+		};
+		FAE0D2842E9FFD88004C7799 /* Exceptions for "TaskWidget" folder in "ToggleTaskIntent" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TaskWidget.swift,
+			);
+			target = FAE0D2662E9FF36D004C7799 /* ToggleTaskIntent */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FAE0D2322E9FD9C3004C7799 /* Homework12_WidgdetDevelopment */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FAE0D2782E9FF57B004C7799 /* Exceptions for "Homework12_WidgdetDevelopment" folder in "TaskWidgetExtension" target */,
+				FAE0D2792E9FF57B004C7799 /* Exceptions for "Homework12_WidgdetDevelopment" folder in "ToggleTaskIntent" target */,
+			);
 			path = Homework12_WidgdetDevelopment;
+			sourceTree = "<group>";
+		};
+		FAE0D24D2E9FF0D8004C7799 /* TaskWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FAE0D2832E9FFD88004C7799 /* Exceptions for "TaskWidget" folder in "Homework12_WidgdetDevelopment" target */,
+				FAE0D2582E9FF0DA004C7799 /* Exceptions for "TaskWidget" folder in "TaskWidgetExtension" target */,
+				FAE0D2842E9FFD88004C7799 /* Exceptions for "TaskWidget" folder in "ToggleTaskIntent" target */,
+			);
+			path = TaskWidget;
+			sourceTree = "<group>";
+		};
+		FAE0D2682E9FF36D004C7799 /* ToggleTaskIntent */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FAE0D27E2E9FF595004C7799 /* Exceptions for "ToggleTaskIntent" folder in "Homework12_WidgdetDevelopment" target */,
+				FAE0D27F2E9FF595004C7799 /* Exceptions for "ToggleTaskIntent" folder in "TaskWidgetExtension" target */,
+				FAE0D2712E9FF36D004C7799 /* Exceptions for "ToggleTaskIntent" folder in "ToggleTaskIntent" target */,
+			);
+			path = ToggleTaskIntent;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +165,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAE0D2442E9FF0D8004C7799 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE0D24C2E9FF0D8004C7799 /* SwiftUI.framework in Frameworks */,
+				FAE0D24A2E9FF0D8004C7799 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE0D2642E9FF36D004C7799 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		FAE0D2272E9FD9C3004C7799 = {
 			isa = PBXGroup;
 			children = (
+				FAE0D2852E9FFDD2004C7799 /* TaskWidgetExtension.entitlements */,
 				FAE0D2322E9FD9C3004C7799 /* Homework12_WidgdetDevelopment */,
+				FAE0D24D2E9FF0D8004C7799 /* TaskWidget */,
+				FAE0D2682E9FF36D004C7799 /* ToggleTaskIntent */,
+				FAE0D2482E9FF0D8004C7799 /* Frameworks */,
 				FAE0D2312E9FD9C3004C7799 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +200,19 @@
 			isa = PBXGroup;
 			children = (
 				FAE0D2302E9FD9C3004C7799 /* Homework12_WidgdetDevelopment.app */,
+				FAE0D2472E9FF0D8004C7799 /* TaskWidgetExtension.appex */,
+				FAE0D2672E9FF36D004C7799 /* ToggleTaskIntent.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FAE0D2482E9FF0D8004C7799 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAE0D2492E9FF0D8004C7799 /* WidgetKit.framework */,
+				FAE0D24B2E9FF0D8004C7799 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +225,14 @@
 				FAE0D22C2E9FD9C3004C7799 /* Sources */,
 				FAE0D22D2E9FD9C3004C7799 /* Frameworks */,
 				FAE0D22E2E9FD9C3004C7799 /* Resources */,
+				FAE0D25C2E9FF0DA004C7799 /* Embed Foundation Extensions */,
+				FAE0D2752E9FF36D004C7799 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FAE0D2562E9FF0DA004C7799 /* PBXTargetDependency */,
+				FAE0D26F2E9FF36D004C7799 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				FAE0D2322E9FD9C3004C7799 /* Homework12_WidgdetDevelopment */,
@@ -69,6 +243,50 @@
 			productName = Homework12_WidgdetDevelopment;
 			productReference = FAE0D2302E9FD9C3004C7799 /* Homework12_WidgdetDevelopment.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FAE0D2462E9FF0D8004C7799 /* TaskWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE0D2592E9FF0DA004C7799 /* Build configuration list for PBXNativeTarget "TaskWidgetExtension" */;
+			buildPhases = (
+				FAE0D2432E9FF0D8004C7799 /* Sources */,
+				FAE0D2442E9FF0D8004C7799 /* Frameworks */,
+				FAE0D2452E9FF0D8004C7799 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FAE0D24D2E9FF0D8004C7799 /* TaskWidget */,
+			);
+			name = TaskWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = TaskWidgetExtension;
+			productReference = FAE0D2472E9FF0D8004C7799 /* TaskWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		FAE0D2662E9FF36D004C7799 /* ToggleTaskIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE0D2722E9FF36D004C7799 /* Build configuration list for PBXNativeTarget "ToggleTaskIntent" */;
+			buildPhases = (
+				FAE0D2632E9FF36D004C7799 /* Sources */,
+				FAE0D2642E9FF36D004C7799 /* Frameworks */,
+				FAE0D2652E9FF36D004C7799 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FAE0D2682E9FF36D004C7799 /* ToggleTaskIntent */,
+			);
+			name = ToggleTaskIntent;
+			packageProductDependencies = (
+			);
+			productName = ToggleTaskIntent;
+			productReference = FAE0D2672E9FF36D004C7799 /* ToggleTaskIntent.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +299,12 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					FAE0D22F2E9FD9C3004C7799 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					FAE0D2462E9FF0D8004C7799 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					FAE0D2662E9FF36D004C7799 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -100,12 +324,28 @@
 			projectRoot = "";
 			targets = (
 				FAE0D22F2E9FD9C3004C7799 /* Homework12_WidgdetDevelopment */,
+				FAE0D2462E9FF0D8004C7799 /* TaskWidgetExtension */,
+				FAE0D2662E9FF36D004C7799 /* ToggleTaskIntent */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FAE0D22E2E9FD9C3004C7799 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE0D2452E9FF0D8004C7799 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE0D2652E9FF36D004C7799 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +362,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAE0D2432E9FF0D8004C7799 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE0D2632E9FF36D004C7799 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAE0D2562E9FF0DA004C7799 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAE0D2462E9FF0D8004C7799 /* TaskWidgetExtension */;
+			targetProxy = FAE0D2552E9FF0DA004C7799 /* PBXContainerItemProxy */;
+		};
+		FAE0D26F2E9FF36D004C7799 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAE0D2662E9FF36D004C7799 /* ToggleTaskIntent */;
+			targetProxy = FAE0D26E2E9FF36D004C7799 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FAE0D23E2E9FD9C4004C7799 /* Debug */ = {
@@ -249,9 +516,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Homework12_WidgdetDevelopment/Homework12_WidgdetDevelopment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Homework12_WidgdetDevelopment/Preview Content\"";
+				DEVELOPMENT_TEAM = LWJ722XA3Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -277,9 +546,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Homework12_WidgdetDevelopment/Homework12_WidgdetDevelopment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Homework12_WidgdetDevelopment/Preview Content\"";
+				DEVELOPMENT_TEAM = LWJ722XA3Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,6 +565,114 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.berkayemreaslan.Homework12-WidgdetDevelopment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FAE0D25A2E9FF0DA004C7799 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TaskWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LWJ722XA3Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.berkayemreaslan.Homework12-WidgdetDevelopment.TaskWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAE0D25B2E9FF0DA004C7799 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TaskWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LWJ722XA3Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.berkayemreaslan.Homework12-WidgdetDevelopment.TaskWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FAE0D2732E9FF36D004C7799 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ToggleTaskIntent/ToggleTaskIntent.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LWJ722XA3Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToggleTaskIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ToggleTaskIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.berkayemreaslan.Homework12-WidgdetDevelopment.ToggleTaskIntent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAE0D2742E9FF36D004C7799 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ToggleTaskIntent/ToggleTaskIntent.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LWJ722XA3Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToggleTaskIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ToggleTaskIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.berkayemreaslan.Homework12-WidgdetDevelopment.ToggleTaskIntent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,6 +696,24 @@
 			buildConfigurations = (
 				FAE0D2412E9FD9C4004C7799 /* Debug */,
 				FAE0D2422E9FD9C4004C7799 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAE0D2592E9FF0DA004C7799 /* Build configuration list for PBXNativeTarget "TaskWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE0D25A2E9FF0DA004C7799 /* Debug */,
+				FAE0D25B2E9FF0DA004C7799 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAE0D2722E9FF36D004C7799 /* Build configuration list for PBXNativeTarget "ToggleTaskIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE0D2732E9FF36D004C7799 /* Debug */,
+				FAE0D2742E9FF36D004C7799 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

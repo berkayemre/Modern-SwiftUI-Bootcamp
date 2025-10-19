@@ -4,81 +4,98 @@
 //
 //  Created by Berkay Emre Aslan on 15.10.2025.
 //
-
 import WidgetKit
 import SwiftUI
+import SwiftData
+import AppIntents
+
+struct TasksEntry: TimelineEntry {
+    let date: Date
+    let items: [TaskItemDTO]
+}
+
+struct TaskItemDTO: Identifiable, Hashable {
+    let id: UUID
+    let title: String
+    let isDone: Bool
+}
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+    private func sample() -> [TaskItemDTO] {
+        [
+            .init(id: UUID(), title: "Örnek: Sunum hazırla", isDone: false),
+            .init(id: UUID(), title: "Örnek: Kod gözden geçir", isDone: true),
+            .init(id: UUID(), title: "Örnek: Rapor güncelle", isDone: false),
+        ]
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
-        completion(entry)
+    func placeholder(in: Context) -> TasksEntry {
+        .init(date: .now, items: sample())
+    }
+    func getSnapshot(in: Context, completion: @escaping (TasksEntry) -> Void) {
+        completion(.init(date: .now, items: sample()))
+    }
+    func getTimeline(in context: Context, completion: @escaping (Timeline<TasksEntry>) -> Void) {
+        let entry = TasksEntry(date: .now, items: loadTop())
+        completion(Timeline(entries: [entry], policy: .never))
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+    }
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
+    private func loadTop() -> [TaskItemDTO] {
+        do {
+            let container = try SharedModelContainer.make()
+            let context = ModelContext(container)
+
+            var desc = FetchDescriptor<TaskItem>(
+                sortBy: [SortDescriptor<TaskItem>(\.createdAt, order: .reverse)]
+            )
+            desc.fetchLimit = 3
+
+            let tasks: [TaskItem] = try context.fetch(desc)
+            return tasks.map { task in
+                TaskItemDTO(id: task.id, title: task.title, isDone: task.isDone)
+            }
+        } catch {
+            return [
+                .init(id: .init(), title: "Örnek: Sunum hazırla", isDone: false),
+                .init(id: .init(), title: "Örnek: Kod gözden geçir", isDone: true),
+                .init(id: .init(), title: "Örnek: Rapor güncelle", isDone: false),
+            ]
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
 
-//    func relevances() async -> WidgetRelevances<Void> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
-}
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let emoji: String
-}
-
-struct TaskWidgetEntryView : View {
-    var entry: Provider.Entry
-
+struct TasksWidgetEntryView: View {
+    var entry: TasksEntry
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
+        VStack(alignment: .leading, spacing: 6) {
+            Text("Görevler").font(.headline)
+            ForEach(entry.items) { item in
+                HStack {
+                    Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
+                    Text(item.title).lineLimit(1).strikethrough(item.isDone)
+                    Spacer()
+                    Button(intent: ToggleTaskIntent(taskID: item.id)) {
+                        Text(item.isDone ? "Aç" : "Tamamla")
+                    }
+                    .font(.caption)
+                }
+            }
+            Spacer(minLength: 0)
         }
+        .padding()
     }
 }
 
 struct TaskWidget: Widget {
-    let kind: String = "TaskWidget"
-
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                TaskWidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                TaskWidgetEntryView(entry: entry)
-                    .padding()
-                    .background()
-            }
+        StaticConfiguration(kind: "TasksWidget", provider: Provider()) { entry in
+            TasksWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Görevler")
+        .description("Son görevlerinizi görün ve tek dokunuşla tamamlayın.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
-#Preview(as: .systemSmall) {
-    TaskWidget()
-} timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
-}
